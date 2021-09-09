@@ -1,0 +1,50 @@
+<%- include('../partials/header') -%>
+    <%- include('../partials/navbar') -%>
+
+        <!-- body content -->
+        <div class="container">
+            <div class="row">
+                <div class="col s12 m6 l6">
+                    <h2 class="header">
+                        <%= product.productTitle %>
+                    </h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="card horizontal">
+                    <div class="col s12 m6 l6 c-image">
+                        <img height="100%" width="100%" src="<%= '/products/' + product.productTitle + '.png'%>">
+                    </div>
+                    <div class="col s12 m6 l6">
+                        <div class="card-stacked">
+                            <div class="card-content" style="text-align: justify;">
+                                <h5>product DETAILS</h5>
+                                <p>
+                                    <%= product.productDetails %>
+                                </p>
+                            </div>
+                            <div class="card-action">
+                                <div class="col s6">
+                                    <form id="cartForm" method="POST" action="" enctype="multipart/form-data">
+                                        <input type="text" id="productId" name="productId" value="<%= product.id %>" hidden>
+                                        <input type="text" id="productTitle" name="productTitle" value="<%= product.productTitle %>" hidden>
+                                        <input type="text" id="productDetails" name="productDetails" value="<%= product.productDetails %>" hidden>
+                                        <input type="text" id="productPrice" name="productPrice" value="<%= product.productPrice %>" hidden>
+                                        <button class="btn blue" onclick="M.toast({classes: 'blue'})" type="submit"><i class="material-icons">add_shopping_cart</i> Add to cart</button>
+                                    </form>
+                                </div>
+                                <div class="col s6">
+                                    <h6>
+                                        <%= product.productPrice %> $
+                                    </h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <%- include('../partials/footer') -%>

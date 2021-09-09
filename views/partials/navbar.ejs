@@ -1,0 +1,22 @@
+<%- include('../partials/header') -%>
+    <!-- navbar -->
+    <nav class="blue darken-1">
+        <div class="nav-wrapper">
+            <a href="/home" class="waves-effect waves-light margin" style="margin-right: 30px;">Add To Cart
+                <i class="material-icons left">home</i>
+            </a>
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="material-icons">menu</i></a>
+            <ul class="right ">
+                <li>
+                    <a href="/product/uploadProduct"><i class="material-icons left">upload</i>Add Product</a>
+                </li>
+                <li style="width: 30vmin;">
+                    <a href="/shoppingCart" class="waves-effect waves-light margin">Shopping Cart
+                        <i class="material-icons left">shopping_cart</i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <strong><%- include('../partials/flashMessages') -%></strong>

@@ -1,0 +1,38 @@
+<%- include('../partials/header') -%>
+    <%- include('../partials/navbar') -%>
+
+        <!-- body content -->
+        <div class="container">
+            <div id="bodyContent" class="row" style="margin-top: 5%;">
+                <% cart.forEach((cart)=> { %>
+                    <div class="col s5" style="margin-right: 8%;">
+                        <a href="<%=  '/product/'  + cart.productId %>">
+                            <div class="row z-depth-4">
+                                <div class="col s6" style="margin-top: 1%;">
+                                    <img height="300px" width="200px" src="<%= '/products/' + cart.productTitle + '.png'%>" style="margin: 5%;">
+                                </div>
+                                <div class="col s6" style="margin-top: 1%;">
+                                    <h3>
+                                        <%= cart.productTitle %>
+                                    </h3>
+                                    <h5>
+                                        <%= cart.productDetails %>
+                                    </h5>
+                                    <span class="card-title light-blue" style="color: white;">
+                                            <%= cart.productPrice %> $
+                                        </span>
+                                </div>
+                                <div class="col s2 center" style="margin-top: 7%;">
+                                    <form action="<%= '/product/deleteProductFromCart'%>" method="POST">
+                                        <input type="text" id="productId" name="productId" value="<%= cart.productId %>" hidden>
+                                        <button type="submit" class="btn red tooltipped" data-position="right" data-tooltip="Unfavorite"><i class="material-icons">delete</i></button>
+                                    </form>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <%})%>
+            </div>
+        </div>
+
+        <%- include('../partials/footer') -%>
